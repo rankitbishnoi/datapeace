@@ -1,0 +1,30 @@
+<div>
+  <table class="table table-striped table-bordered table-responsive-xl table-hover" *ngIf="userList">
+    <thead class="pointer">
+    <tr class="table-secondary">
+      <th scope="col" (click)="sorting(1)" [class]="'' + sortClass('first_name')"><span *ngIf="key === 'first_name'" [class]="'' + caretClass()"></span> First Name</th>
+      <th scope="col" (click)="sorting(2)" [class]="'' + sortClass('last_name')"><span *ngIf="key === 'last_name'" [class]="'' + caretClass()"></span> Last Name</th>
+      <th scope="col" (click)="sorting(3)" [class]="'' + sortClass('company_name')"><span *ngIf="key === 'company_name'" [class]="'' + caretClass()"></span> Company Name</th>
+      <th scope="col" (click)="sorting(4)" [class]="'' + sortClass('city')"><span *ngIf="key === 'city'" [class]="'' + caretClass()"></span> City</th>
+      <th scope="col" (click)="sorting(5)" [class]="'' + sortClass('state')"><span *ngIf="key === 'state'" [class]="'' + caretClass()"></span> State</th>
+      <th scope="col" (click)="sorting(6)" [class]="'' + sortClass('zip')"><span *ngIf="key === 'zip'" [class]="'' + caretClass()"></span> Zip</th>
+      <th scope="col" (click)="sorting(7)" [class]="'' + sortClass('email')"><span *ngIf="key === 'email'" [class]="'' + caretClass()"></span> Email</th>
+      <th scope="col" (click)="sorting(8)" [class]="'' + sortClass('web')"><span *ngIf="key === 'web'" [class]="'' + caretClass()"></span> Web</th>
+      <th scope="col" (click)="sorting(9)" [class]="'' + sortClass('age')"><span *ngIf="key === 'age'" [class]="'' + caretClass()"></span> Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of userList | sort:lever:key:order | pagination:currentPage:'data';" (click)="openUser(user);">
+      <th scope="row">{{user.first_name}}</th>
+      <td>{{user.last_name}}</td>
+      <td>{{user.company_name}}</td>
+      <td>{{user.city}}</td>
+      <td>{{user.state}}</td>
+      <td>{{user.zip}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.web}}</td>
+      <td>{{user.age}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

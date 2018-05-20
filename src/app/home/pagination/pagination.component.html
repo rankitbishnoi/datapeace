@@ -1,0 +1,27 @@
+<div class="d-flex justify-content-between mt-5 mx-2">
+  <div>
+    <span class="badge badge-pill badge-light solidBorder py-2 px-3 text-primary" (click)="previous();">Previous</span>
+  </div>
+  <div>
+    <span class="badge badge-pill badge-light solidBorder py-2 px-3 text-primary" (click)="next();">Next</span>
+  </div>
+</div>
+<div class="my-3 mx-1 d-none d-xl-block" *ngIf="numberOfPages">
+  <nav aria-label="Page navigation example">
+    <ul class="pagination pagination-lg justify-content-center">
+      <li class="page-item" (click)="previous();">
+        <a class="page-link" href="#" aria-label="Previous">
+          <span aria-hidden="true">&laquo;</span>
+          <span class="sr-only">Previous</span>
+        </a>
+      </li>
+      <li class="page-item" *ngFor="let page of  range() | pagination:currentPage:'pageNumber'" (click)="newPage(page);"><a href="#" [class]="'page-link ' + pageLink(page)">{{page}}</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#" aria-label="Next" (click)="next();">
+          <span aria-hidden="true">&raquo;</span>
+          <span class="sr-only">Next</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
