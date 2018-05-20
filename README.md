@@ -18,3 +18,10 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## AWS S3
 
 The web app has been hosted on AWS S3 bucket already. Link :- [DataPeace](http://datapeace.s3-website-us-east-1.amazonaws.com)
+
+##Contact:
+
+Developer: Rankit   
+Mobile: +919416061874   
+Email: rankitgodara1@gmail.com   
+Website: [rankit.tech](http://rankit.tech.s3-website-us-east-1.amazonaws.com)   
